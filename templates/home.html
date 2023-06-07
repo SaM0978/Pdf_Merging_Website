@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <form method="post" action="." enctype="multipart/form-data">
+            {% csrf_token %}
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                        {{ form.file }}
+                        {{ form.file2 }}
+                          <div class="form-group  mb-2">
+                            {{form.name}}
+                          </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+                
+        </form>  
+        {{form.error}}
+    </div>
+{% endblock %}
